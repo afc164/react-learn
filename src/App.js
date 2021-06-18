@@ -21,13 +21,29 @@ class App extends Component {
     this.setState({todos: newTodos})
   }
 
+  changChecked = (id,done) => {
+    console.log('APP111', id, done)
+    let {todos} = this.state
+    let newTodos = todos.map(item => {
+      if(item.id === id){
+        return {
+          ...item,
+          done
+        }
+      } else{
+        return item
+      }
+    })
+    this.setState({todos: newTodos})
+  }
+
   render() {
     const {todos} = this.state
     return (
       <div className="todo-container">
         <div className="todo-wrap">
           <Header addTodo={this.addTodo}/>
-          <List todos={todos}/>
+          <List changChecked={this.changChecked} todos={todos}/>
           <Footer />
         </div>
       </div>

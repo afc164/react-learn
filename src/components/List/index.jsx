@@ -9,7 +9,7 @@ class index extends Component {
             <ul className="todo-main">
                 {
                     todos.map(item => {
-                        return <Item key={item.id} item={item}/>
+                        return <Item changChecked={this.props.changChecked} key={item.id} item={item}/>
                     })
                 }
             </ul>
