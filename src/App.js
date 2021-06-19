@@ -15,14 +15,12 @@ class App extends Component {
   }
 
   addTodo = (todoObj) => {
-    console.log('App~',todoObj)
     const {todos} = this.state
     const newTodos = [todoObj,...todos]
     this.setState({todos: newTodos})
   }
 
   changChecked = (id,done) => {
-    console.log('APP111', id, done)
     let {todos} = this.state
     let newTodos = todos.map(item => {
       if(item.id === id){
@@ -37,14 +35,41 @@ class App extends Component {
     this.setState({todos: newTodos})
   }
 
+  handleCheckAll = (done) => {
+    let {todos} = this.state
+    let newTodos = todos.map(item => {
+      return {
+        ...item,
+        done
+      }
+    })
+    this.setState({todos: newTodos})
+  }
+
+  handleDeleteAllDone = () => {
+    let {todos} = this.state
+    let newTodos = todos.filter(item => {
+      return !item.done
+    })
+    this.setState({todos: newTodos})
+  }
+
+  deleteItem = (id) => {
+    let {todos} = this.state
+    let newTodos = todos.filter(item => {
+      return item.id !== id
+    })
+    this.setState({todos: newTodos})
+  }
+
   render() {
     const {todos} = this.state
     return (
       <div className="todo-container">
         <div className="todo-wrap">
           <Header addTodo={this.addTodo}/>
-          <List changChecked={this.changChecked} todos={todos}/>
-          <Footer />
+          <List deleteItem={this.deleteItem} changChecked={this.changChecked} todos={todos}/>
+          <Footer handleDeleteAllDone={this.handleDeleteAllDone} handleCheckAll={this.handleCheckAll} todos={todos}/>
         </div>
       </div>
     );
