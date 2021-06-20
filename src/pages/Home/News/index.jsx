@@ -3,7 +3,11 @@ import React, { Component } from 'react';
 class index extends Component {
     render() {
         return (
-            <div className="page-header"><h2>React Router Demo</h2></div>
+            <ul>
+                <li>news001</li>
+                <li>news002</li>
+                <li>news003</li>
+            </ul>
         );
     }
 }

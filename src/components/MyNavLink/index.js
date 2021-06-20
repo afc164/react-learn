@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import {NavLink} from 'react-router-dom'
 
 class index extends Component {
     render() {
         return (
-            <div className="page-header"><h2>React Router Demo</h2></div>
+            <NavLink activeClassName="brown" className="list-group-item" {...this.props} />
         );
     }
 }

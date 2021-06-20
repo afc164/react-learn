@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class index extends Component {
     render() {
         return (
-            <div className="page-header"><h2>React Router Demo</h2></div>
+            <div>
+               <h3>我是About的内容</h3> 
+            </div>
         );
     }
 }
