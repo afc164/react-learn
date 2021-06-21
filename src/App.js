@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import 'antd/dist/antd.css'
+// import 'antd/dist/antd.css'
 import {Button,TimePicker } from 'antd'
+import './App.less';
 import {
   HomeOutlined,
   SettingFilled,
