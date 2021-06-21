@@ -7,9 +7,9 @@ import MyNavLink from '../../components/MyNavLink'
 class index extends Component {
     render() {
         return (
-            <div class="col-xs-6">
-                <div class="panel">
-                    <div class="panel-body">
+            <div className="col-xs-6">
+                <div className="panel">
+                    <div className="panel-body">
                         <h3>我是Home的内容</h3>
                         <div>
                             <ul className="nav nav-tabs">
